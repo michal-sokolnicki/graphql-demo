@@ -1,0 +1,36 @@
+type Investment {
+   investmentId: ID!
+   fundId: Float
+   fundName: String
+   email: String
+   closeDate: String
+   classType: String
+   clientAccountNumber: String
+   clientAccountName: String
+   bankName: String
+   bankAba: String
+   accountNum: String
+   accountName: String
+   swiftCode: String
+   ffc: String
+   bankReference: String
+   taxId: Float
+   amount: Int
+   managementFee: String
+   ir: String
+   compliance: String
+   investorName: String
+   investorId: Float
+   investorDob: String
+   addressLine1: String
+   addressLine2: String
+   city: String
+   state: String
+   zip: String
+   country: String
+}
+
+type Query {
+  findAllInvestments: [Investment]
+  findInvestmentById(id: ID): Investment
+}
