@@ -4,15 +4,12 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.Map;
+
 @Data
 @Configuration
-@ConfigurationProperties(prefix = "query")
+@ConfigurationProperties(prefix = "investment")
 public class QueryConfig {
 
-    private String internalQuery;
-    private String internalByIdQuery;
-    private String salesQuery;
-    private String salesByIdQuery;
-    private String purchaseQuery;
-    private String purchaseByIdQuery;
+    private Map<String, String> queries;
 }

@@ -3,6 +3,8 @@ package com.graphql.demo.entity;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
@@ -13,6 +15,8 @@ import javax.persistence.Id;
 public class Investment {
 
    @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   private long id;
    private Long investmentId;
    private Long fundId;
    private String fundName;

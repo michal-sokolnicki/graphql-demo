@@ -6,117 +6,118 @@ spring:
     console.enabled: true
     console.path: /h2-console
   datasource:
-    url: jdbc:h2:file:./data/demo
+    url: jdbc:h2:mem:graphql-demo
     username: sa
     password: password
     driverClassName: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    show-sql: true
+    open-in-view: false
 
-query:
-  internal-query: '{
-    findAllInvestments {
-      investmentId 
-      fundId 
-      fundName
-      email
-      closeDate
-      classType
-      clientAccountNumber
-      clientAccountName
-      bankName 
-      bankAba
-      accountNum
-      accountName
-      swiftCode
-      ffc
-      bankReference
-      taxId
-      amount
-      managementFee
-      ir
-      compliance
-      investorName
-      investorId
-      investorDob
-      addressLine1
-      addressLine2
-      city
-      state
-      zip
-    }
-  }'
-  internal-by-id-query: '{  
-   findInvestmentById(id: %o) {
-      investmentId 
-      fundId 
-      fundName
-      email
-      closeDate
-      classType
-      clientAccountNumber
-      clientAccountName
-      bankName 
-      bankAba
-      accountNum
-      accountName
-      swiftCode
-      ffc
-      bankReference
-      taxId
-      amount
-      managementFee
-      ir
-      compliance
-      investorName
-      investorId
-      investorDob
-      addressLine1
-      addressLine2
-      city
-      state
-      zip
-    }
-  }'
-  sales-query: '{
-    findAllInvestments {
-      investmentId 
-      fundId 
-      email
-      closeDate
-      clientAccountNumber
-      clientAccountName
-    }
-  }'
-  sales-by-id-query: '{  
-    findInvestmentById(id: %o) {
-      investmentId 
-      fundId 
-      email
-      closeDate
-      clientAccountNumber
-      clientAccountName
-    }
-  }'
-  purchase-query: '{
-    findAllInvestments {
-      investmentId 
-      bankName 
-      bankAba
-      accountNum
-      accountName
-      swiftCode
-      ffc
-    }
-  }'
-  purchase-by-id-query: '{  
-    findInvestmentById(id: %o) {
-      investmentId 
-      fundId 
-      email
-      closeDate
-      clientAccountNumber
-      clientAccountName
-    }
-  }'
+graphql:
+  tools:
+    schema-location-pattern: "**/*.graphql"
+
+investment:
+  queries:
+    all: '{
+      findAllInvestments {
+        investmentId 
+        fundId 
+        fundName
+        email
+        closeDate
+        classType
+        clientAccountNumber
+        clientAccountName
+        bankName 
+        bankAba
+        accountNum
+        accountName
+        swiftCode
+        ffc
+        bankReference
+        taxId
+        amount
+        managementFee
+        ir
+        compliance
+        investorName
+        investorId
+        investorDob
+        addressLine1
+        addressLine2
+        city
+        state
+        zip
+      }
+    }'
+    investment-by-id: 'query findInvestmentById ($id: ID) {  
+     findInvestmentById(id: $id) {
+        investmentId 
+        fundId 
+        fundName
+        email
+        closeDate
+        classType
+        clientAccountNumber
+        clientAccountName
+        bankName 
+        bankAba
+        accountNum
+        accountName
+        swiftCode
+        ffc
+        bankReference
+        taxId
+        amount
+        managementFee
+        ir
+        compliance
+        investorName
+        investorId
+        investorDob
+        addressLine1
+        addressLine2
+        city
+        state
+        zip
+      }
+    }'
+    wire: '{
+      findAllInvestments {
+        investmentId 
+        fundId
+        fundName 
+        email
+        closeDate
+        clientAccountNumber
+        clientAccountName
+      }
+    }'
+    contacts: '{  
+      findAllInvestments {
+        investmentId 
+        fundId 
+        email
+        closeDate
+        clientAccountNumber
+        clientAccountName
+      }
+    }'
+    client-ref: '{
+      findAllInvestments {
+        investmentId 
+        bankName 
+        bankAba
+        accountNum
+        accountName
+        swiftCode
+        ffc
+      }
+    }'
