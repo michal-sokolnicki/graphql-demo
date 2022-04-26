@@ -1,4 +1,4 @@
-package com.graphql.demo.config;
+package com.graphql.investment.service.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

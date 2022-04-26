@@ -1,7 +1,7 @@
-package com.graphql.demo.service;
+package com.graphql.investment.service.service;
 
-import com.graphql.demo.entity.Investment;
-import com.graphql.demo.repository.InvestmentRepository;
+import com.graphql.investment.service.model.Investment;
+import com.graphql.investment.service.repository.InvestmentRepository;
 import graphql.schema.DataFetcher;
 import org.springframework.stereotype.Service;
 

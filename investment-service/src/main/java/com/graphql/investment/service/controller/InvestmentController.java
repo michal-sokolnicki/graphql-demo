@@ -1,7 +1,7 @@
-package com.graphql.demo.controller;
+package com.graphql.investment.service.controller;
 
-import com.graphql.demo.config.QueryConfig;
-import com.graphql.demo.service.GraphQLProvider;
+import com.graphql.investment.service.config.QueryConfig;
+import com.graphql.investment.service.service.GraphQLProvider;
 import graphql.ExecutionResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

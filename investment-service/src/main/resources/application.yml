@@ -1,0 +1,16 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  application:
+    name: investment-service
+  profiles:
+    active: investment_service
+  config:
+    import: 'configserver:http://localhost:8888'
+  cloud:
+    config:
+      name: investment-service, config-client

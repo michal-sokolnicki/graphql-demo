@@ -1,4 +1,4 @@
-package com.graphql.demo.service;
+package com.graphql.investment.service.service;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;

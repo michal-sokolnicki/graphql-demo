@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/michal-sokolnicki/graphql-cloud-config-repository.git
+          username: michal-sokolnicki
+          password: '{cipher}98c18823aa45d3d761d82ff490e70e02884be132990079301e838900c5774042e6eb50b204411e390020c895bc3ad94a9b43388d3efc241a5045c04b0ad62e12'
+          default-label: main
+          clone-on-start: true
+    fail-fast: true
