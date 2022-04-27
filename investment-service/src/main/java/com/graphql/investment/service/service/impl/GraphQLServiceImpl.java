@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,6 @@ public class GraphQLServiceImpl implements GraphQLService {
         String query = queryConfig.getQueries().get(queryType);
         log.info("Running GraphQL query: {}", query);
         return queryInvoker.query(invocationInputFactory.create(
-                new GraphQLRequest(query, variables, new HashMap<>(), null))).getResult();
+                new GraphQLRequest(query, variables, Collections.emptyMap(), null))).getResult();
     }
 }
