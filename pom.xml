@@ -13,9 +13,9 @@
 		<version>2.6.7</version>
 	</parent>
 	<groupId>com.graphql</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>graphql-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>graphql-demo</name>
 	<description>Demo project for Spring Boot with GraphQL</description>
 	<properties>
 		<java.version>11</java.version>

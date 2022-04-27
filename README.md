@@ -11,7 +11,9 @@ For building and running the application you need:
 
 ## Running the application locally
 
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.graphql.demo.DemoApplication` class from your IDE.
+The project consists of two modules: `config-server` and `investment-service`, to run `investment-service` where the entire API is available, first `config-server` must be up and running.
+
+To run `investment-service` as Spring Boot application on your local machine - execute the `main` method in the `com.graphql.investment.service.InvestmentServiceApplication` class from your IDE.
 
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
