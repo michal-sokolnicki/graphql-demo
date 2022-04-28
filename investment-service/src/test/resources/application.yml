@@ -1,0 +1,122 @@
+spring:
+  h2:
+    console.enabled: false
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+    show-sql: true
+    open-in-view: false
+  cloud:
+    config:
+      enabled: false
+
+graphql:
+  tools:
+    schema-location-pattern: "**/*.graphql"
+
+investment:
+  queries:
+    all: '{
+      findAllInvestments {
+        investmentId 
+        fundId 
+        fundName
+        email
+        closeDate
+        classType
+        clientAccountNumber
+        clientAccountName
+        bankName 
+        bankAba
+        accountNum
+        accountName
+        swiftCode
+        ffc
+        bankReference
+        taxId
+        amount
+        managementFee
+        ir
+        compliance
+        investorName
+        investorId
+        investorDob
+        addressLine1
+        addressLine2
+        city
+        state
+        zip
+      }
+    }'
+    investment-by-id: 'query findInvestmentById ($id: ID) {  
+     findInvestmentById(id: $id) {
+        investmentId 
+        fundId 
+        fundName
+        email
+        closeDate
+        classType
+        clientAccountNumber
+        clientAccountName
+        bankName 
+        bankAba
+        accountNum
+        accountName
+        swiftCode
+        ffc
+        bankReference
+        taxId
+        amount
+        managementFee
+        ir
+        compliance
+        investorName
+        investorId
+        investorDob
+        addressLine1
+        addressLine2
+        city
+        state
+        zip
+      }
+    }'
+    wire: '{
+      findAllInvestments {
+        investmentId 
+        fundId
+        fundName 
+        email
+        closeDate
+        clientAccountNumber
+        clientAccountName
+      }
+    }'
+    contacts: '{  
+      findAllInvestments {
+        investmentId 
+        fundId 
+        email
+        closeDate
+        clientAccountNumber
+        clientAccountName
+      }
+    }'
+    client-ref: '{
+      findAllInvestments {
+        investmentId 
+        bankName 
+        bankAba
+        accountNum
+        accountName
+        swiftCode
+        ffc
+      }
+    }'
