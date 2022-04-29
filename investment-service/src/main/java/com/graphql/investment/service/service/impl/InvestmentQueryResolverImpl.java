@@ -27,6 +27,6 @@ public class InvestmentQueryResolverImpl implements GraphQLQueryResolver, Invest
     public Investment findInvestmentById(long id) {
         return investmentRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException(
-                        MessageFormat.format("Investment with id: {} not found", id)));
+                        MessageFormat.format("Investment with id: {0} not found", id)));
     }
 }

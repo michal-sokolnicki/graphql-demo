@@ -20,3 +20,9 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 ```shell
 mvn spring-boot:run
 ```
+
+To use other database than embedded RAM overwrite following properties in IDE/mvn settings:
+```shell
+-Dspring.datasource.url=jdbc:h2:file:./data/demo   // jdbc url
+-Dspring.sql.init.mode=never                       // control whether to run initial script
+```
