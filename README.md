@@ -13,7 +13,8 @@ For building and running the application you need:
 
 The project consists of two modules: `config-server` and `investment-service`, to run `investment-service` where the entire API is available, first `config-server` must be up and running.
 
-`config-server` use {cipher} encrypt method to store password to config github repository, so `config-server` must be run with '-Dencrypt.key=salting' VM option
+`config-server` use {cipher} encrypt method to store password to config github repository, so `config-server` must be run with 
+'-Dencrypt.key=salting' VM option
 
 To run `investment-service` as Spring Boot application on your local machine - execute the `main` method in the `com.graphql.investment.service.InvestmentServiceApplication` class from your IDE.
 
